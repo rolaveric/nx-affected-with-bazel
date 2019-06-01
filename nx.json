@@ -13,6 +13,21 @@
     },
     "nx-affected-with-bazel": {
       "tags": []
+    },
+    "first-e2e": {
+      "tags": []
+    },
+    "first": {
+      "tags": []
+    },
+    "second-e2e": {
+      "tags": []
+    },
+    "second": {
+      "tags": []
+    },
+    "common": {
+      "tags": []
     }
   }
 }

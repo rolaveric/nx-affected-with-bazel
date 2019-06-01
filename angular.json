@@ -114,6 +114,251 @@
           }
         }
       }
+    },
+    "first": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "apps/first",
+      "sourceRoot": "apps/first/src",
+      "prefix": "nx-affected-with-bazel",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/first",
+            "index": "apps/first/src/index.html",
+            "main": "apps/first/src/main.ts",
+            "polyfills": "apps/first/src/polyfills.ts",
+            "tsConfig": "apps/first/tsconfig.app.json",
+            "assets": ["apps/first/src/favicon.ico", "apps/first/src/assets"],
+            "styles": ["apps/first/src/styles.css"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/first/src/environments/environment.ts",
+                  "with": "apps/first/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "first:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "first:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "first:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/first/tsconfig.app.json",
+              "apps/first/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/first/jest.config.js",
+            "tsConfig": "apps/first/tsconfig.spec.json",
+            "setupFile": "apps/first/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "first-e2e": {
+      "root": "apps/first-e2e",
+      "sourceRoot": "apps/first-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/first-e2e/cypress.json",
+            "tsConfig": "apps/first-e2e/tsconfig.e2e.json",
+            "devServerTarget": "first:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "first:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/first-e2e/tsconfig.e2e.json"
+          }
+        }
+      }
+    },
+    "second": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "apps/second",
+      "sourceRoot": "apps/second/src",
+      "prefix": "nx-affected-with-bazel",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/second",
+            "index": "apps/second/src/index.html",
+            "main": "apps/second/src/main.ts",
+            "polyfills": "apps/second/src/polyfills.ts",
+            "tsConfig": "apps/second/tsconfig.app.json",
+            "assets": ["apps/second/src/favicon.ico", "apps/second/src/assets"],
+            "styles": ["apps/second/src/styles.css"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/second/src/environments/environment.ts",
+                  "with": "apps/second/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "second:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "second:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "second:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/second/tsconfig.app.json",
+              "apps/second/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/second/jest.config.js",
+            "tsConfig": "apps/second/tsconfig.spec.json",
+            "setupFile": "apps/second/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "second-e2e": {
+      "root": "apps/second-e2e",
+      "sourceRoot": "apps/second-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/second-e2e/cypress.json",
+            "tsConfig": "apps/second-e2e/tsconfig.e2e.json",
+            "devServerTarget": "second:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "second:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/second-e2e/tsconfig.e2e.json"
+          }
+        }
+      }
+    },
+    "common": {
+      "projectType": "library",
+      "root": "libs/common",
+      "sourceRoot": "libs/common/src",
+      "prefix": "nx-affected-with-bazel",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/common/tsconfig.lib.json",
+              "libs/common/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/common/jest.config.js",
+            "tsConfig": "libs/common/tsconfig.spec.json",
+            "setupFile": "libs/common/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {}
     }
   },
   "cli": {
