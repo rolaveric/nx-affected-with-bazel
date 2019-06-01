@@ -16,7 +16,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nx-affected-with-bazel/common": ["libs/common/src/index.ts"]
+      "myworkspace/*": ["./*"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { CommonModule } from '@nx-affected-with-bazel/common';
+import { CommonModule } from 'myworkspace/libs/common/src';
 
 import { AppComponent } from './app.component';
 

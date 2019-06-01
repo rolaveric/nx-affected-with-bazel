@@ -1,5 +1,5 @@
 {
-  "npmScope": "nx-affected-with-bazel",
+  "npmScope": "myworkspace",
   "implicitDependencies": {
     "angular.json": "*",
     "package.json": "*",
